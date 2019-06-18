@@ -1,0 +1,8 @@
+C:\Users\swukxr3\Desktop\GITUST\UltimateSerialTerminal-v2\UltimateSerialTerminal\Ultimate Serial Terminal\bin\Release\Ultimate Serial Terminal.exe
+C:\Users\swukxr3\Desktop\GITUST\UltimateSerialTerminal-v2\UltimateSerialTerminal\Ultimate Serial Terminal\bin\Release\Ultimate Serial Terminal.pdb
+C:\Users\swukxr3\Desktop\GITUST\UltimateSerialTerminal-v2\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Release\Ultimate_Serial_Terminal.Form1.resources
+C:\Users\swukxr3\Desktop\GITUST\UltimateSerialTerminal-v2\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Release\Ultimate_Serial_Terminal.Properties.Resources.resources
+C:\Users\swukxr3\Desktop\GITUST\UltimateSerialTerminal-v2\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Release\Ultimate Serial Terminal.csproj.GenerateResource.cache
+C:\Users\swukxr3\Desktop\GITUST\UltimateSerialTerminal-v2\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Release\Ultimate Serial Terminal.csproj.CoreCompileInputs.cache
+C:\Users\swukxr3\Desktop\GITUST\UltimateSerialTerminal-v2\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Release\Ultimate Serial Terminal.exe
+C:\Users\swukxr3\Desktop\GITUST\UltimateSerialTerminal-v2\UltimateSerialTerminal\Ultimate Serial Terminal\obj\Release\Ultimate Serial Terminal.pdb
