@@ -133,6 +133,7 @@ namespace Ultimate_Serial_Terminal
                     ComPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), comboBox4.Text);
                 
                     ComPort.Open();
+                    timer1.Enabled = false;
                     ComPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
                     button1.Text = "Port Open";
                     button1.BackColor = Color.PaleGreen;
@@ -147,6 +148,7 @@ namespace Ultimate_Serial_Terminal
                 button1.Text = "Port Closed";
                 button1.BackColor = Color.PaleVioletRed;
                 ComPort.Close();
+                timer1.Enabled = true;
             }
         }
 
