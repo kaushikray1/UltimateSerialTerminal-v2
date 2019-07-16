@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.IO.Ports;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Ultimate_Serial_Terminal
 {
@@ -14,7 +15,7 @@ namespace Ultimate_Serial_Terminal
     {
         readonly SerialPort ComPort = new SerialPort();
         delegate void SetTextCallback(string text);
-        
+        FileStream F = new FileStream("test.csv", FileMode.OpenOrCreate, FileAccess.ReadWrite);
 
         public Form1()
         {
@@ -34,14 +35,19 @@ namespace Ultimate_Serial_Terminal
         private void SetText(string text)
         {
             richTextBox1.SelectionColor = Color.Blue;
-            richTextBox1.SelectedText = text;
-            //this.richTextBox1.Text += text;
-            
+            //string time1 = DateTime.Now.ToString("HH:mm:ss.ffffff");
+            //text = text + ',' + time1;
+            richTextBox1.SelectedText =  text;
+
+            string path = @"C:\Users\swukxr3\Documents\MyTest.txt";
+
             if (checkBox1.Checked)
             {
                 this.richTextBox1.SelectionStart = this.richTextBox1.Text.Length;
                 this.richTextBox1.ScrollToCaret();
             }
+
+            File.AppendAllText(path, text);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -348,6 +354,11 @@ namespace Ultimate_Serial_Terminal
             {
                 //MessageBox.Show("No Serial Device found", "Error", MessageBoxButtons.OK);
             }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
