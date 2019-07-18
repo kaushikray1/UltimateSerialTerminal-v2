@@ -15,7 +15,9 @@ namespace Ultimate_Serial_Terminal
     {
         readonly SerialPort ComPort = new SerialPort();
         delegate void SetTextCallback(string text);
-        FileStream F = new FileStream("test.csv", FileMode.OpenOrCreate, FileAccess.ReadWrite);
+        
+        //filesystem related variables for Logging.
+        System.IO.FileStream fs;
 
         public Form1()
         {
@@ -35,11 +37,10 @@ namespace Ultimate_Serial_Terminal
         private void SetText(string text)
         {
             richTextBox1.SelectionColor = Color.Blue;
-            //string time1 = DateTime.Now.ToString("HH:mm:ss.ffffff");
-            //text = text + ',' + time1;
             richTextBox1.SelectedText =  text;
 
-            string path = @"C:\Users\swukxr3\Documents\MyTest.txt";
+            //string path = @"C:\Users\swukxr3\Documents\MyTest.txt";
+            //File.AppendAllText(path, text);
 
             if (checkBox1.Checked)
             {
@@ -47,7 +48,6 @@ namespace Ultimate_Serial_Terminal
                 this.richTextBox1.ScrollToCaret();
             }
 
-            File.AppendAllText(path, text);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -358,7 +358,66 @@ namespace Ultimate_Serial_Terminal
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            
 
+            if (button4.Text == "Log")
+            {
+                //REF: https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/how-to-save-files-using-the-savefiledialog-component
+                //https://stackoverflow.com/questions/8416858/how-to-get-full-path-from-savefiledialog-and-use-in-startinfo-arguments
+
+                
+
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "Text File|*.txt|CSV File|*.csv|LOG File|*.log";
+                saveFileDialog1.Title = "Save LOG File";
+                saveFileDialog1.ShowDialog();
+
+                // If the file name is not an empty string open it for saving.  
+                if (saveFileDialog1.FileName != "")
+                {
+
+                    fs =(System.IO.FileStream)saveFileDialog1.OpenFile();
+
+                    //string path = @"C:\Users\swukxr3\Documents\MyTest.txt";
+                    //File.AppendAllText(path, text);
+
+                    switch (saveFileDialog1.FilterIndex)
+                    {
+                        //case needs to change for the following file type
+                        case 1:
+
+                            break;
+
+                        case 2:
+
+                            break;
+
+                        case 3:
+
+                            break;
+                    }
+
+                    button4.Text = "Logging";
+                    button4.BackColor = Color.PaleGreen;
+
+                    //fs.Close();
+                }
+            }
+            else if (button4.Text == "Logging")
+            {
+                button4.Text = "Log";
+                button4.BackColor = Color.Gray;
+                fs.Close();
+            }
+
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Text File|*.txt|CSV File|*.csv|LOG File|*.log";
+            saveFileDialog1.Title = "Save Window";
+            saveFileDialog1.ShowDialog();
         }
     }
 }

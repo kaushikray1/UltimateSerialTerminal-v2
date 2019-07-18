@@ -75,6 +75,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(766, 703);
             this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = "";
             // 
             // comboBox1
@@ -153,6 +154,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "Save Window";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button4
             // 
